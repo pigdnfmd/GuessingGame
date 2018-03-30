@@ -1,0 +1,63 @@
+<!-- Ignore me, I am some text to tell the web browser that I am a web page -->
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+
+<!-- I am the code that makes the tab have a title. Change "Triangle Area Calculator to whatever tab title you like-->
+<HTML>
+   <HEAD>
+      <TITLE>
+        Guess the Number
+      </TITLE>
+   </HEAD>
+<BODY>
+<!-- End tab title -->
+
+<!-- I am the title of the web page. That is what the h1 means in the greater than and less than brackets -->
+<!-- <h1> tells the web browser "begin writing the title" and </h1> tells the web browser "finish writing the title -->
+<h1> Guess the Number</h1>
+
+<!-- I am the code that makes the image appear. Make sure the image is saved in the same folder as the index.html file -->
+<!-- Have any image. Change "Triangle_Area_Image.png" to the name of your image file. -->
+<!-- Also, change width and height numbers to change the size of the image -->
+<!-- Copy and paste the line of code below to put in even more images -->
+<img src="Crystal_Ball.png" alt="Triangle Image" width ="300" height="200"> <br>
+<input id="myInput">
+<button id="myBtn" onclick="getAnswer();">Check Number</button>
+<div id="Answer"></div>
+
+<script>
+
+var randomNumber = Math.floor((Math.random() * 20) + 1);
+
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("myBtn").click();
+		document.getElementById("myInput").value = "";
+    }
+});
+
+
+
+
+function getAnswer() {
+	
+	var inputNumber = document.getElementById("myInput").value;
+	
+	if (inputNumber != randomNumber){
+	document.getElementById("Answer").innerHTML = "Guess again";
+	}
+	
+	if (inputNumber == randomNumber){
+	document.getElementById("Answer").innerHTML = "Correct!";
+	}
+
+	
+
+
+	
+}
+</script>
+
+</body>
+</html>
